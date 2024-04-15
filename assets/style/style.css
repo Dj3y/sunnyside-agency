@@ -4,7 +4,7 @@
 
 header {
   background-image: url("../../assets/images/photos/image-header.jpg");
-  background-size: 800px 500px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #cccccc;
@@ -124,7 +124,7 @@ header #arrow {
 
 #graphic-design {
   background-image: url("../../assets/images/photos/image-graphic-design.jpg");
-  background-size: 600px 500px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #cccccc;
@@ -159,29 +159,10 @@ header #arrow {
   line-height: 25px;
   text-align: center;
 }
-#graphic-design hr {
-  background-color: hsl(51, 100%, 49%);
-  border-radius: 20px;
-  border: none;
-  margin: -10px auto 0;
-  height: 12px;
-  width: 120px;
-  opacity: 0.25;
-}
-#graphic-design a {
-  font-family: Barlow;
-  font-weight: 700;
-  color: hsl(212, 27%, 19%);
-  text-decoration: none;
-  padding-top: 10%;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-}
 
 #photography {
   background-image: url("../../assets/images/photos/image-photography.jpg");
-  background-size: 600px 500px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #cccccc;
@@ -233,7 +214,7 @@ header #arrow {
   font-weight: bold;
   color: black;
   font-size: 18px;
-  padding: 20px 0 10px 0;
+  padding: 20px 0 10px;
 }
 #opinion p:nth-child(4) {
   color: hsl(210, 4%, 67%);
@@ -271,7 +252,8 @@ footer ul {
   list-style: none;
   padding: 0;
 }
-footer li, footer a {
+footer a,
+footer li {
   text-decoration: none;
   color: hsl(168, 34%, 41%);
   font-weight: 600;
@@ -296,20 +278,71 @@ footer div a {
   header nav {
     display: flex;
     justify-content: space-between;
+    padding: 2%;
   }
-  header figure {
+  header nav figure {
     width: 50px;
+    padding: 0;
   }
   header ul {
     display: flex;
     margin-right: 20px;
     list-style: none;
   }
-  header li, header a {
+  header a,
+  header li {
     text-decoration: none;
     padding-left: 20px;
+    color: white;
+  }
+  header #contact a {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    color: black;
+    text-transform: uppercase;
+    padding: 10px 20px;
+  }
+  header h1 {
+    margin-top: 10%;
   }
   header #arrow img {
     text-align: center;
+    margin: -5%;
+  }
+  #brand {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #brand .textSection {
+    width: 50%;
+  }
+  #audience {
+    display: flex;
+  }
+  #audience .textSection {
+    width: 50%;
+  }
+  #graphic-photography {
+    display: flex;
+  }
+  #graphic-photography section {
+    width: 50%;
+  }
+  #graphic-photography p {
+    padding: 0 25%;
+  }
+  #opinion #opinion-text {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  #opinion #opinion-text div {
+    width: 25%;
+  }
+  #img-gallery .gallery {
+    width: 25%;
+  }
+  footer nav {
+    margin: 0 35%;
   }
 }/*# sourceMappingURL=style.css.map */
