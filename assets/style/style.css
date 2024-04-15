@@ -240,12 +240,13 @@ header #arrow {
   padding-bottom: 40px;
 }
 
+#img-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
 #img-gallery .gallery {
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  width: 40%;
-  align-items: flex-start;
+  width: 50%;
 }
 #img-gallery img {
   display: flex;

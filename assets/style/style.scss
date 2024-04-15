@@ -216,12 +216,12 @@ $fontFrauces: Fraunces;
  }
 
  #img-gallery{
+    display: flex;
+    flex-wrap: wrap;
     .gallery{
     display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    width: 40%;
-    align-items: flex-start;
+    width: 50%;
+
 }
     img{
         display: flex;
