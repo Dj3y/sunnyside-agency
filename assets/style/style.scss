@@ -1,1 +1,295 @@
- 
+// PRIMARY COLOR
+$softred :hsl(7, 99%, 70%);
+$yellow : hsl(51, 100%, 49%);
+$desaturatedCyan: hsl(167, 40%, 24%);
+$darkBlue: hsl(198, 62%, 26%);
+$moderateCyan: hsl(168, 34%, 41%);
+
+// NEUTRAL COLOR
+$desaturatedBlue: hsl(212, 27%, 19%);
+$veryDarkGrayishBlue: hsl(213, 9%, 39%);
+$darkGrayishBlue: hsl(232, 10%, 55%);
+$grayishBlue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// FONTS
+$fontBarlow: Barlow;
+$fontFrauces: Fraunces;
+
+// Rule for the background images
+@mixin backgroundImage($background-img, $background-size) {
+    background-image: $background-img;
+    background-size: $background-size;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
+    height: 500px;
+  }
+
+// Rule for the h2 of the page
+@mixin fontH2($h2Color:$veryDarkGrayishBlue){
+    color: $h2Color;
+    font-family: $fontFrauces;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    padding: 5%;
+}
+
+// Rule for the section/div with the text
+@mixin textSection{
+    padding: 50px 15px;
+}
+
+// Rule for the images of the page without header image
+@mixin imgContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    object-fit: fill;
+}
+
+// Rule for the paragraphs
+@mixin paragraph($colorP:$veryDarkGrayishBlue){
+    font-family: $fontBarlow;
+    color: $colorP;
+    font-weight: 600;
+    line-height: 25px;
+    text-align: center;
+}
+
+// Rule for the link LEARN MORE
+@mixin learnMore{
+    font-family: $fontBarlow;
+    font-weight: 700;
+    color: $desaturatedBlue;
+    text-decoration: none;
+    padding-top: 10%;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+// Rule for underline decoration of rhe link LEARN MORE
+@mixin hrUnderline{
+    background-color: $yellow;
+    border-radius: 20px;
+    border: none;
+    margin: -10px auto 0;
+    height: 12px;
+    width: 120px;
+    opacity: 0.25;
+}
+
+*{
+    margin: 0;
+}
+ header{
+    @include backgroundImage(url("../../assets/images/photos/image-header.jpg"), 800px 500px);
+    nav figure{
+        padding: 5%;
+    }
+    ul{
+        display: none;
+    }
+    h1{
+        font-family: $fontFrauces;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 900;
+        margin-top: 2%;
+    }
+    #arrow{
+        text-align: center;
+        margin: 10%;
+    }
+ }
+
+ #brand{
+    h2{
+        @include fontH2;
+    }
+    .textSection{
+        @include textSection;
+    }
+    img{
+        @include imgContent;
+    }
+    p{
+        @include paragraph;
+    }
+    hr{
+        @include hrUnderline;
+    }
+    a{
+        @include learnMore;
+    }
+ }
+
+ #audience{
+    h2{
+        @include fontH2;
+    }
+    .textSection{
+        @include textSection;
+    }
+    img{
+        @include imgContent;
+    }
+    p{
+        @include paragraph;
+    }
+    hr{
+        @include hrUnderline;
+    }
+    a{
+        @include learnMore;
+    }
+ }
+
+ #graphic-design{
+    @include backgroundImage(url("../../assets/images/photos/image-graphic-design.jpg"), 600px 500px);
+    h2{
+        @include fontH2;
+        padding-top: 320px;
+        color: $desaturatedCyan;
+        font-size: 24px;
+    }
+    .textSection{
+        @include textSection;
+    }
+    img{
+        @include imgContent;
+    }
+    p{
+        @include paragraph($desaturatedCyan);
+    }
+    hr{
+        @include hrUnderline;
+    }
+    a{
+        @include learnMore;
+    }
+ }
+
+ #photography{
+    @include backgroundImage(url("../../assets/images/photos/image-photography.jpg"), 600px 500px);
+    h2{
+        @include fontH2($darkBlue);
+        padding-top: 320px;
+    }
+    p{
+        @include paragraph($darkBlue);
+    }
+ }
+
+ #opinion{
+    h2{
+        @include fontH2($grayishBlue);
+        margin-top: 50px;
+    }
+    div{
+        text-align: center;
+        margin: 20px 30px;
+    }
+    img{
+        border-radius: 100px;
+        height: 80px;
+        margin: 20px;
+    }
+    p{
+        @include paragraph;
+    }
+    p:nth-child(3){
+        font-weight: bold;
+        color: black;
+        font-size: 18px;
+        padding: 20px 0 10px 0;
+    }
+    p:nth-child(4){
+        color:$grayishBlue;
+        padding-bottom: 40px;
+    }
+ }
+
+ #img-gallery{
+    .gallery{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    width: 40%;
+    align-items: flex-start;
+}
+    img{
+        display: flex;
+        width: 100%;
+        object-fit: fill;
+    }
+ }
+
+ footer{
+    // margin: 50px 0;
+    background-color: rgb(144, 212, 197);
+    p{
+        color: $moderateCyan;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+        padding: 50px 0;
+    }
+    ul{
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+    }
+    li, a{
+        text-decoration: none;
+        color: $moderateCyan;
+        font-weight: 600;
+    }
+    div{
+        display: flex;
+        justify-content: center;
+        padding: 80px 0 40px;
+    }
+    div a{
+        padding-left: 20px;
+    }
+ }
+
+ @media screen and (min-width: 780px) {
+    
+ }
+
+ @media screen and (min-width: 1024px){
+    header{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-size: cover;
+        height: 800px;
+        nav{
+            display: flex;
+            justify-content: space-between;
+        }
+        figure{
+            width: 50px;     
+        }
+        ul{
+            display: flex;
+            margin-right: 20px;
+            list-style: none;
+        }
+        li, a{
+            text-decoration: none;
+            padding-left: 20px;
+        }
+        #arrow img{
+            text-align: center;
+        }
+    }
+ }
